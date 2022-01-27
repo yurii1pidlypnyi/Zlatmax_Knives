@@ -1,0 +1,50 @@
+.radio {
+//Shell for radio buttons
+  // &__buttons {
+  // }
+//Custom radio button
+  &__element {
+    position: relative;
+    left: 0;
+    top: 0;
+    padding-left: 25px;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      transform: translate(0,-50%);
+      border: solid 2px red;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: orange;
+      position: absolute;
+      left: 5px;
+      top: 50%;
+      transform: translate(0,-50%);
+      opacity: 0;
+      visibility: hidden;
+      transition:all 0.4s ease 0s ;
+    }
+
+    &.active::after{
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+//Input type radios
+  // &__button{
+
+  // }
+}

@@ -1,0 +1,61 @@
+.select {
+  //Select body
+  &__body{
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    
+    &::before{
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-bottom: 3px solid #000;
+      border-right: 3px solid #000;
+      margin-right: 10px;
+      transform: rotate(45deg);
+      transition: all 0.4s ease 0s;
+      pointer-events: none;
+    }
+
+    &.active{
+      &::before{
+        transform: rotate(-135deg);
+        top: 7px;
+      }
+    }
+  }
+  //Select field with active option
+  &__field{
+    text-align: left;
+    width: 100%;
+    border: 1px solid #d7dadd;
+    border-radius: 4px;
+  }
+  //Block with options
+  &__values{
+    position: absolute;
+    left: 0;
+    width: 100%;
+  }
+  //Options list
+  &__options{
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+  //Element option
+  &__option{
+    text-align: left;
+  }
+  //Element option with value 0
+  &__placeholder{
+    color: gray;
+  }
+}
